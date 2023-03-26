@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// Bước 1: Import React, React-DOM
+import React, {StrictMode} from 'react'
+import {createRoot} from 'react-dom/client'
+import App from './app'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// Bước 2: Khai báo dom
+const rootElement = document.querySelector("#root")
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Bước 3: Tạo react dom (Virtual DOM)
+const reactRoot = createRoot(rootElement)
+
+// Bước 4: Render
+
+reactRoot.render(
+    <StrictMode>
+       <App></App>
+    </StrictMode>
+)
+
+// Buoc 1: npm install -g create-react-app
+// Buoc 2: npx create-react-app <ten folder>
+// Buoc 3: cd <ten folder>
+// Buoc 4: npm start
